@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-gradient: linear-gradient(45deg, #ff00ff, #9c27b0);
+}
+
+/* Custom cursor */
+* {
+  cursor: none;
+}
+
+.custom-cursor {
+  @apply fixed w-6 h-6 pointer-events-none z-50 mix-blend-difference opacity-0;
+  background: radial-gradient(circle, #ff00ff, transparent 60%);
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s ease;
+  filter: blur(1px);
+  will-change: transform;
+}
+
+.cursor-visible {
+  opacity: 1;
+}
+
+/* Hide progress bar */
+#nprogress {
+  display: none !important;
+}
+
+body {
+  @apply m-0 bg-dark text-light;
+  font-family: 'Inter', sans-serif;
+}
+
+.glass {
+  @apply backdrop-blur-md bg-white/10 border border-white/20;
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-magenta to-purple;
+}
+
+.card-hover {
+  @apply transition-all duration-500 hover:scale-105 hover:shadow-lg hover:shadow-magenta/20;
+}
+
+/* Base button styles */
+.btn {
+  @apply px-6 py-3 rounded-full font-medium transition-all duration-500
+         hover:shadow-lg hover:shadow-magenta/50 hover:-translate-y-1;
+  background: linear-gradient(45deg, #ff00ff, #9c27b0);
+}
+
+/* Button variations */
+.btn-primary {
+  background: linear-gradient(45deg, #ff00ff, #9c27b0);
+}
+
+.btn-secondary {
+  background: linear-gradient(45deg, #9c27b0, #673ab7);
+}
+
+.btn-tertiary {
+  background: linear-gradient(45deg, #673ab7, #ff00ff);
+}
+
+.section-padding {
+  @apply py-20 px-4 md:px-8 lg:px-16;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Monaco editor customization */
+.monaco-editor {
+  @apply rounded-lg overflow-hidden;
+}
+
+/* Enhanced animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  50% { transform: translateY(-10px) rotate(2deg); }
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 8s ease infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Smooth scroll animation */
+.scroll-smooth {
+  scroll-behavior: smooth;
+  transition: scroll-behavior 0.5s ease-in-out;
+}
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #8f54a000 #ffffff00;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 16px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #ffffff00;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #8f54a000;
+    border-radius: 10px;
+    border: 3px solid #ffffff00;
+  }
