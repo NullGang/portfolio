@@ -1,4 +1,5 @@
 <script setup lang="ts">
+//@ts-ignore
 import { ref } from 'vue'
 
 const skills = [

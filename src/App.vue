@@ -4,10 +4,11 @@ import { useMotion } from '@vueuse/motion'
 import HeroSection from './components/HeroSection.vue'
 import AboutSection from './components/AboutSection.vue'
 import ProjectsSection from './components/ProjectsSection.vue'
-import CodeEditorSection from './components/CodeEditorSection.vue'
+//import CodeEditorSection from './components/CodeEditorSection.vue'
 import ContactSection from './components/ContactSection.vue'
 import FooterSection from './components/FooterSection.vue'
 
+//@ts-ignore
 const { isSupported } = useMotion()
 const cursor = ref({ x: 0, y: 0 })
 const cursorVisible = ref(false)
@@ -25,6 +26,7 @@ onMounted(() => {
     clearTimeout(cursorTimeout)
     
     // Hide cursor when not moving
+    //@ts-ignore
     cursorTimeout = setTimeout(() => {
       cursorVisible.value = false
     }, 3000)
